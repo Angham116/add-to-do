@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<title>To do App</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
 		<div class="main">
@@ -9,12 +10,6 @@
 				<input type="text" name="inputText" class="main--input" required>
 			</label>
 			<div class="priority">
-			<label for="priority"> Urgent
-				<input type="radio" name="priority" class="main--input--urgent" value="urgent">
-			</label>
-			<label for="priority"> Not Urgent
-				<input type="radio" name="priority" class="main--input--notUrgent" value="noturgent">
-			</label>
 			<label for="priority"> Important
 				<input type="radio" name="priority" class="main--input--important" value="important">
 			</label>
@@ -25,6 +20,7 @@
 			<button class="main--btn">Add Task</button>
 		</div>
 		<div class="listTasks">
+			<h2 class="main--hidden"></h2>
 			<ul class="tasksList--ul">
 				
 			</ul>

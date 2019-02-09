@@ -2,48 +2,19 @@ let input = document.querySelector('.main--input');
 const btn = document.querySelector('.main--btn');
 const tasksList = document.querySelector('.tasksList--ul');
 const listTasks = document.querySelector('.listTasks');
-const urgent = document.querySelector('.main--input--urgent');
-const notUrgent = document.querySelector('.main--input--notUrgent');
 const important = document.querySelector('.main--input--important');
 const notImportant = document.querySelector('.main--input--notImportant');
-
-// const selectors = querySelectors(
-// 	['tasksListUl', 'listTasks',
-// 	'urgent', 'notUrgent', 'important', 'notImportant'], 
-// 	['.tasksList--ul', '.main--input--urgent', '.main--input--notUrgent',
-// 	'.main--input--important', '.main--input--notImportant']
-// );
-
-// let query = input.value;
+const mainHidden = document.querySelector('.main--hidden');
 
 btn.addEventListener('click', (event) => {
 	if (!input.value) { 
-		// console.log('Empty')
 		emptyValueFun() ;
 	} 
-	else renderTasks();
-	
+	else renderTasks();	
 })
 
-// function renderTasks() {
-// 	if (selectors.urgent.checked) {
-// 		renderUrgentTask();
-// 	} else if (selectors.notUrgent.checked) {
-// 		renderNotUrgentTask();
-// 	} else if (selectors.important.checked) {
-// 		renderImportantTask();
-// 	} else {
-// 		renderNotImportantTask();
-// 	}
-// 	return false;
-// }
-
 function renderTasks() {
-	if (urgent.checked) {
-		renderUrgentTask();
-	} else if (notUrgent.checked) {
-		renderNotUrgentTask();
-	} else if (important.checked) {
+	if (important.checked) {
 		renderImportantTask();
 	} else {
 		renderNotImportantTask();
@@ -52,68 +23,36 @@ function renderTasks() {
 }
 
 function emptyValueFun() { 
-		// selectors.listTasks.innerHTML = ' ';
-		listTasks.innerHTML = ' ';
-		const {emptyValue} = createNode(['emptyValue'], ['p'], ['emptyValue']);
-		emptyValue.textContent = 'Required field';
-		// console.log('oooiu')
-		// selectors.listTasks.appendChild(emptyValue);
-		listTasks.appendChild(emptyValue);	
+		mainHidden.textContent = 'Required field';
 }
-
-function renderUrgentTask() {
-	// console.log('renderUrgentTask')
-	input.value=' ';
-	// selectors.urgent.checked = false;
-	urgent.checked = false;
-	const listitem = createNode(['listitem', 'deleteIcon'], ['li', 'i'], ['li--argent', 'fa-delete']);
-	// console.log(input);
-	// selectors.listitem.textContent = input.value;
-	listitem.listitem.textContent = input.value;
-	listitem.listitem.appendChild(listitem.deleteIcon);
-	tasksList.appendChild(listitem.listitem);
-	// console.log('kjhgfd')
-
-}
-
-function renderNotUrgentTask() {
-	// console.log('notttt');
-	input.value=' ';
-	// selectors.notUrgent.checked = false;
-	notUrgent.checked = false;
-	const listitem = createNode(['listitem', 'deleteIcon'], ['li', 'i'], ['li--notArgent', 'fa-delete']);
-	// console.log(listitem);
-	listitem.listitem.textContent = input.value;
-	listitem.listitem.appendChild(listitem.deleteIcon);
-	tasksList.appendChild(listitem.listitem);
-	// console.log('kjhgfd')
-}
-
 
 function renderImportantTask() {
-	// console.log('notttt');
-	input.value=' ';
-	// selectors.important.checked = false;
-	important.checked = false;
-	const listitem = createNode(['listitem', 'deleteIcon'], ['li', 'i'], ['li--important', 'fa-delete']);
-	// console.log(listitem);
+	mainHidden.textContent = ' ';
+	const listitem = createNode(['listitem', 'deleteBtn', 'deleteIcon'], 
+	['li', 'button',  'i'], 
+	['li--important', 'deleteIcon', 'fal']);
 	listitem.listitem.textContent = input.value;
-	listitem.listitem.appendChild(listitem.deleteIcon);
+	l
+	listitem.deleteIcon.classList.add('fa-trash-alt');
+	listitem.deleteBtn.appendChild(listitem.deleteIcon);
+	listitem.listitem.appendChild(listitem.deleteBtn);
 	tasksList.appendChild(listitem.listitem);
-	// console.log('kjhgfd')
+	input.value=' ';
+	important.checked = false;
 }
 
 function renderNotImportantTask() {
-	// console.log('notttt');
-	input.value=' ';
-	// selectors.notImportant.checked = false;
-	notImportant.checked = false;
-	const listitem = createNode(['listitem', 'deleteIcon'], ['li', 'i'], ['li--notImportant', 'fa-delete']);
-	// console.log(listitem);
+	mainHidden.textContent = ' ';
+	const listitem = createNode(['listitem', 'deleteBtn', 'deleteIcon'], 
+	['li', 'button', 'i'], 
+	['li--notImportant', 'deleteIcon', 'fal']);
 	listitem.listitem.textContent = input.value;
-	listitem.listitem.appendChild(listitem.deleteIcon);
+	listitem.deleteIcon.classList.add('fa-trash-alt');
+	listitem.deleteBtn.appendChild(listitem.deleteIcon);
+	listitem.listitem.appendChild(listitem.deleteBtn);
 	tasksList.appendChild(listitem.listitem);
-	// console.log('kjhgfd')
+	input.value=' ';
+	notImportant.checked = false;
 }
 
 function createNode(NodeNames, NodeTypes, classNames) {
@@ -126,13 +65,6 @@ function createNode(NodeNames, NodeTypes, classNames) {
 	});
 	return nodes;
 };
-
-// function querySelectors(ElementNames, selectors) {
-// 	if (ElementNames.length !== selectors.length) return 'Should be the same length';
-// 	let elements = {};
-// 	ElementNames.map((element, index) => elements[element] = document.querySelector(selectors[index]));
-// 	return elements;
-// };
 
 
 
