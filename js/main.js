@@ -32,13 +32,14 @@ function renderImportantTask() {
 	['li', 'button',  'i'], 
 	['li--important', 'deleteIcon', 'fal']);
 	listitem.listitem.textContent = input.value;
-	l
 	listitem.deleteIcon.classList.add('fa-trash-alt');
 	listitem.deleteBtn.appendChild(listitem.deleteIcon);
 	listitem.listitem.appendChild(listitem.deleteBtn);
 	tasksList.appendChild(listitem.listitem);
 	input.value=' ';
-	important.checked = false;
+	listitem.deleteBtn.addEventListener('click', (event) => {
+		tasksList.removeChild(listitem.listitem);
+	});
 }
 
 function renderNotImportantTask() {
@@ -52,7 +53,13 @@ function renderNotImportantTask() {
 	listitem.listitem.appendChild(listitem.deleteBtn);
 	tasksList.appendChild(listitem.listitem);
 	input.value=' ';
-	notImportant.checked = false;
+	listitem.deleteBtn.addEventListener('click', (event) => {
+		tasksList.removeChild(listitem.listitem);
+	});
+}
+
+function emptyToggleValue() {
+	mainHidden.textContent = 'Required field';
 }
 
 function createNode(NodeNames, NodeTypes, classNames) {
