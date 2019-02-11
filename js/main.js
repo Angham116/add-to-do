@@ -22,15 +22,18 @@ function renderTasks() {
 	return false;
 }
 
-function emptyValueFun() { 
+function emptyValueFun() {
+		// console.log('jhjhghgh') ;
 		mainHidden.textContent = 'Required field';
 }
+
+// , 'markBtn', 'markIcon'
 
 function renderImportantTask() {
 	mainHidden.textContent = ' ';
 	const listitem = createNode(['listitem', 'deleteBtn', 'deleteIcon'], 
 	['li', 'button',  'i'], 
-	['li--important', 'deleteIcon', 'fal']);
+	['li--important', 'deleteIcon', 'far']);
 	listitem.listitem.textContent = input.value;
 	listitem.deleteIcon.classList.add('fa-trash-alt');
 	listitem.deleteBtn.appendChild(listitem.deleteIcon);
@@ -41,12 +44,13 @@ function renderImportantTask() {
 		tasksList.removeChild(listitem.listitem);
 	});
 }
+// <i class="far fa-edit"></i>
 
 function renderNotImportantTask() {
 	mainHidden.textContent = ' ';
 	const listitem = createNode(['listitem', 'deleteBtn', 'deleteIcon'], 
 	['li', 'button', 'i'], 
-	['li--notImportant', 'deleteIcon', 'fal']);
+	['li--notImportant', 'deleteIcon', 'far']);
 	listitem.listitem.textContent = input.value;
 	listitem.deleteIcon.classList.add('fa-trash-alt');
 	listitem.deleteBtn.appendChild(listitem.deleteIcon);

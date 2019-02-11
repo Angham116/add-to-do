@@ -3,13 +3,17 @@
 <head>
 	<title>To do App</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
+<body>  
+		<div class="nav">
+			<h2 class="nav--h">TO DO LIST</h2>
+		</div>
 		<div class="main">
-			<label for="inputText">What is To be Done?
-				<input type="text" name="inputText" class="main--input" required>
+			<label for="inputText" class="main--input--label">What is To be Done?
+				<input type="text" name="inputText" class="main--input" placeholder="Enter Your Task" required>
 			</label>
-			<div class="priority">
+			<div class="main--priority">
 			<label for="priority"> Important
 				<input type="radio" name="priority" class="main--input--important" value="important" checked="checked">
 			</label>
@@ -25,6 +29,9 @@
 				
 			</ul>
 		</div>
+		<!-- <div class="footer">
+			<h2>Made by ...</h2>
+		</div> -->
 		
 
 
