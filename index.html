@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>To do App</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>  
+		<div class="nav">
+			<h2 class="nav--h">TO DO LIST</h2>
+		</div>
+		<div class="main">
+			<label for="inputText" class="main--input--label">What is To be Done?
+				<input type="text" name="inputText" class="main--input" placeholder="Enter Your Task" required>
+			</label>
+			<div class="main--priority">
+			<label for="priority"> Important
+				<input type="radio" name="priority" class="main--input--important" value="important" checked="checked">
+			</label>
+			<label for="priority"> Not Important
+				<input type="radio" name="priority" class="main--input--notImportant" value="notimportant">
+			</label>
+			</div>
+			<button class="main--btn">Add Task</button>
+		</div>
+		<div class="listTasks">
+			<h2 class="main--hidden"></h2>
+			<ul class="tasksList--ul">
+				
+			</ul>
+		</div>
+		<!-- <div class="footer">
+			<h2>Made by ...</h2>
+		</div> -->
+		
+
+
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
+

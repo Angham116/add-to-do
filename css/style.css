@@ -1,0 +1,133 @@
+@import 'https://fonts.googleapis.com/css?family=Lato';
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+
+body {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'lato';
+	/*background-color: #DCD9D4; 
+	background: #C9CCD3;
+	background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
+	background-blend-mode: lighten;*/
+	background-color: #eeebe9;
+	min-height: 100vh;
+}
+
+.nav {
+	background-color: #16a085;
+	height: 4.5em;
+	padding: 0.5em 0.5em;
+}
+
+.nav--h {
+	color: #fff;
+	padding: 0.3em 11.3em;
+	font-family: 'Roboto';
+	letter-spacing: 0.1em;
+}
+
+.main--input--label, .main--input {
+	display: block;
+	text-align: left;
+	padding: 0 27em;
+}
+
+.main{
+	text-align: center;
+	margin-top: 4em;
+}
+
+.main--input{
+	margin: 1em auto;
+	padding: 1em 29em 1em 0;
+	/*padding-left: 0;*/
+	border: none;
+	outline: none;
+	border-bottom: 1px solid #16a085;
+	background: #eeebe9;
+}
+
+.main--priority{
+	margin: 2em;
+	display: inline-block;
+}
+
+.main--priority label {
+	padding: 0.9em;
+}
+
+.main--btn{
+	padding: 0.8em 2em;
+	border:1px;
+	font-size: 1em;
+	display: inline-block;
+}
+
+.li--important, .li--notImportant {
+	margin: 10px auto;
+	width: 34%;
+	text-align: left;
+	border-radius: 3px;
+	line-height: 60px;
+	padding: 0 20px;
+	letter-spacing: 2px;
+	height:auto;
+}
+
+.li--important {
+	background-color: #16a085; /* 34495e 3c6382  */
+}
+
+.li--notImportant {
+	background-color: #34495e;/* 34495e 3c6382  */
+}
+
+.tasksList--ul{
+	list-style-type: none;
+	padding:0;
+
+}
+
+.deleteIcon{
+	float:right;
+	margin-top:1.3em;
+	border:none;
+	cursor: pointer; 
+}
+
+.li--notImportant .deleteIcon {
+	background-color: #34495e;
+}
+
+
+@media only screen and (max-width: 890px){
+
+	.nav--h {
+	padding: 0.4em;
+	}
+
+	.main--input--label {
+	padding: 0 5em;
+	}
+
+	.main--input {
+	padding: 1em 4em;
+	}
+
+	.main--btn{
+	padding: 0.5em 1.5em;
+	}
+
+	.li--important, .li--notImportant {
+	padding: 0 5em;
+	}
+}
+
+@media only screen and (max-width: 500px){
+
+	.main--input {
+	padding: 1em 9em;
+	}
+
+}
